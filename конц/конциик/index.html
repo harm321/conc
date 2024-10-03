@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stars in Graz</title>
+</head>
+
+<body>
+    <nav id="navigation">
+        <button id="menu-toggle">☰</button> <!-- Кнопка для открытия меню -->
+        <ul id="menu-list">
+            <li><a href="#landing">Главная</a></li>
+            <li><a href="#schedule">Расписание концертов</a></li>
+            <li><a href="#tickets">Купить билеты</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#faq">Часто задаваемые вопросы</a></li>
+        </ul>
+    </nav>
+    
+    
+    <!-- MVP – Итерация 1 -->
+    <section id="landing">
+        <div
+            style="height: 60vh; width: 55vh; display: flex; justify-content: center; align-items: center; text-align: center; background-image: url('gg.png'); background-size: cover; background-position: center; border-radius: 50px;">
+            <div>
+                <h1>Stars in Graz</h1>
+                <p>30.11.2021</p>
+                <p>Messe Congress Graz</p>
+                <p>Полный сайт будет работать с 15.11.2021</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MMP – Итерация 2 -->
+
+    <section id="schedule" style="padding: 20px;">
+        <h2 style="text-align: center;">Расписание концертов</h2>
+        <div class="concerts-container">
+            <div class="concert-card">
+                <img src="bb.jpg" alt="Артист 1" class="concert-image">
+                <h3 class="artist-name">BRANDON</h3>
+                <p class="concert-date">Дата: 30.11.2021</p>
+            </div>
+            <div class="concert-card">
+                <img src="ll.jpg" alt="Артист 2" class="concert-image">
+                <h3 class="artist-name">Cross Purposes</h3>
+                <p class="concert-date">Дата: 02.12.2021</p>
+            </div>
+            <div class="concert-card">
+                <img src="gg.jpg" alt="Артист 3" class="concert-image">
+                <h3 class="artist-name">MOROZOV</h3>
+                <p class="concert-date">Дата: 05.12.2021</p>
+            </div>
+        </div>
+        <div class="arrow-buttons">
+            <button class="prev-button">←</button>
+            <button class="next-button">→</button>
+        </div>
+    </section>
+    
+    
+
+
+    <section id="tickets">
+        <h2>Купить билеты</h2>
+    
+        <!-- Форма покупки билета -->
+        <div class="form-container">
+            <form>
+                <div>
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+    
+                <div>
+                    <label for="phone">Номер телефона:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+    
+                <div>
+                    <label for="email">Почта:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+    
+                <!-- Кнопка покупки билета -->
+                <button type="submit">Купить билет</button>
+            </form>
+        </div>
+    </section>
+    
+    
+
+    <section id="reviews">
+        <h2>Отзывы</h2>
+    
+        <!-- Отзыв 1 -->
+        <div class="review">
+            <img src="57.jpg" alt="Иван Иванов" class="review-photo">
+            <blockquote>
+                <p class="review-text">"Концерт был просто огонь! Начиная с первых аккордов и до самого конца я не мог оторвать глаз от сцены. Энергия, которая исходила от музыкантов, была невероятной. Особо порадовало то, что звук был идеально настроен — никакой какофонии, всё чётко и слаженно. Ещё хочу отметить работу светотехников: световое шоу было на высоте, оно добавляло атмосферности каждому треку. Чувствовалось, что артисты отдаются на 100%, и публика отвечала им взаимностью. После концерта вышел с таким зарядом энергии, что до сих пор не отпускает. Настоящий праздник для души! Я обязательно расскажу об этом концерте всем своим друзьям и знакомым, чтобы они тоже могли испытать такие замечательные эмоции. В общем, это был один из лучших концертов в моей жизни, и я буду ждать следующего выступления с нетерпением!"</p>
+                <span class="read-more">Читать полностью</span>
+            </blockquote>
+        </div>
+    
+        <!-- Отзыв 2 -->
+        <div class="review">
+            <img src="i.png" alt="Ирина Валерьевна" class="review-photo">
+            <blockquote>
+                <p class="review-text">"Концерт превзошёл все мои ожидания! Я давно хотела побывать на выступлении этой группы, и они не разочаровали. Всё было продумано до мелочей: от костюмов до визуальных эффектов. Музыка была настолько проникновенной, что временами я забывала обо всём вокруг и просто погружалась в звуки и эмоции. Мне понравилось, как артисты общались с залом, создавая тёплую и уютную атмосферу, как будто мы все старые друзья. Концерт был идеальным — от начала и до последней ноты. Я почувствовала, что каждая песня была написана с душой, и исполнение было настолько живым, что я была в восторге. Я тоже обязательно расскажу всем своим знакомым о том, как здорово было на концерте, ведь такие моменты стоит переживать вместе с другими. Не терпится снова увидеть их на сцене и насладиться таким чудесным представлением!"</p>
+                <span class="read-more">Читать полностью</span>
+            </blockquote>
+        </div>
+    
+        <!-- Отзыв 3 -->
+        <div class="review">
+            <img src="diploma.png" alt="Олег Петров" class="review-photo">
+            <blockquote>
+                <p class="review-text">"Недавно побывал на концерте и остался под впечатлением! Атмосфера была просто волшебной — сцена, свет, звук, всё было на высшем уровне. Я был в восторге от живого исполнения, которое значительно отличается от записи в студии. Каждая песня пробирала до мурашек, а когда зал начал подпевать, эмоции зашкаливали. Артисты общались с публикой, создавая ощущение, что мы все находимся в одном большом музыкальном путешествии. Этот вечер останется в памяти надолго. Я чувствовал, что весь зал единым целым переживал каждую ноту, и это было просто потрясающе. В следующем концерте я постараюсь взять с собой друзей, чтобы разделить с ними эти незабываемые эмоции. Безусловно, это был один из тех вечеров, которые не забываются, и я очень рад, что решил на него прийти!"</p>
+                <span class="read-more">Читать полностью</span>
+            </blockquote>
+        </div>
+    </section>
+    
+    
+
+    <section id="faq">
+        <h2>Часто задаваемые вопросы</h2>
+    
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Когда состоится следующий концерт?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Следующий концерт состоится 30.11.2021.</p>
+            </div>
+        </div>
+    
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Как купить билеты?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Используйте кнопку "Купить билеты" на этой странице.</p>
+            </div>
+        </div>
+    
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Можно ли вернуть билеты?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Да, вы можете вернуть билеты за 24 часа до начала концерта.</p>
+            </div>
+        </div>
+    
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Есть ли возрастные ограничения?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Да, концерт доступен для зрителей старше 12 лет.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+const concertCards = document.querySelectorAll('.concert-card');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+
+let currentIndex = 0;
+const totalCards = concertCards.length;
+
+// Функция для обновления отображения концертов
+function updateConcerts() {
+    concertCards.forEach((card, index) => {
+        card.classList.remove('active'); // Убираем класс активности у всех карточек
+    });
+
+    // Показываем только одну карточку в зависимости от текущего индекса
+    concertCards[currentIndex].classList.add('active'); // Добавляем класс активности к текущей карточке
+}
+
+// Обработчик события для кнопки "Назад"
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalCards) % totalCards; // Уменьшаем индекс
+    updateConcerts();
+});
+
+// Обработчик события для кнопки "Вперед"
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalCards; // Увеличиваем индекс
+    updateConcerts();
+});
+
+// Инициализируем отображение
+updateConcerts();
+
+
+
+
+
+
+        // Ограничение ввода в поле имени
+        document.getElementById('name').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^a-zA-ZА-Яа-яЁё\s]/g, '');
+        });
+
+        // Ограничение ввода в поле телефона
+        document.getElementById('phone').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^0-9\+\s\-]/g, '');
+        });
+
+        document.querySelectorAll('#reviews blockquote').forEach(function (blockquote) {
+            blockquote.addEventListener('click', function () {
+                blockquote.classList.toggle('expanded');
+                let readMore = blockquote.querySelector('.read-more');
+                if (blockquote.classList.contains('expanded')) {
+                    readMore.textContent = 'Свернуть';
+                } else {
+                    readMore.textContent = 'Читать полностью';
+                }
+            });
+        });
+
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                this.classList.toggle('active');
+            });
+        });
+
+        let lastScrollTop = 0; // Сохраняем позицию последней прокрутки
+
+window.addEventListener("scroll", function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (currentScroll > lastScrollTop) {
+        // Прокрутка вниз — скрываем меню
+        document.getElementById("navigation").classList.add("hidden");
+    } else {
+        // Прокрутка вверх — показываем меню
+        document.getElementById("navigation").classList.remove("hidden");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Ограничиваем значение прокрутки
+});
+
+// Получаем кнопку переключения и навигационное меню
+const menuToggle = document.getElementById('menu-toggle');
+const navigation = document.getElementById('navigation');
+
+// Обработчик клика на кнопку переключения
+menuToggle.addEventListener('click', () => {
+    navigation.classList.toggle('active'); // Переключаем класс активности
+});
+
+
+
+    </script>
+
+
+</body>
+
+</html>
