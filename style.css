@@ -1,0 +1,458 @@
+html {
+    scroll-behavior: smooth;
+    /* Плавный скролл при переходе по якорям */
+}
+
+
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+#navigation {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Чтобы меню было поверх других элементов */
+    background-color: #2f012d;
+    transition: transform 0.3s ease; /* Плавное скрытие и появление */
+}
+
+#navigation.hidden {
+    transform: translateY(-100%); /* Скрыть меню */
+}
+
+/* Навигационное меню */
+#navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Расстояние между пунктами меню */
+    list-style-type: none;
+    margin: 0;
+    padding: 30px; /* Отступы внутри */
+}
+
+#navigation ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 20px; /* Отступы вокруг текста */
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#navigation ul li a:hover {
+    background-color: #6e0168;
+}
+#menu-toggle {
+    display: none;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: #000000;
+}
+
+/* Стили для MVP – Итерация 1 */
+#landing {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('gg.png');
+    /* URL изображения */
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Прозрачный слой для размытия */
+#landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Затемнённый фон с большей непрозрачностью */
+    backdrop-filter: blur(10px); /* Размывание фона для мягкости */
+    z-index: 1;
+}
+
+
+/* Контент размещается поверх слоя */
+#landing > div {
+    position: relative;
+    z-index: 2;
+ /* Затемнённый фон для блока с текстом */
+    padding: 20px; /* Отступы внутри блока */
+    border-radius: 20px; /* Закруглённые углы для эстетики */
+}
+
+
+#landing h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff; /* Яркий белый цвет текста */
+    text-shadow: -6px 6px 30px rgba(0, 0, 0, 1); /* Увеличены смещение и размытие тени */ 
+}
+
+
+
+#landing p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: rgb(255, 255, 255);
+    text-shadow: -3px 4px 4px rgba(0, 0, 0, 0.76);
+}
+
+
+
+/* Стили для MMP – Итерация 2 */
+
+/* Разделы контента */
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+.concerts-container {
+    display: flex;
+    justify-content: center; /* Центрируем карточки */
+    overflow: hidden; /* Скрываем лишние карточки */
+}
+
+.concert-card {
+    flex: 0 0 80%; /* Устанавливаем размер карточки */
+    max-width: 400px; /* Максимальная ширина карточки */
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    display: none; /* Скрываем карточки по умолчанию */
+    opacity: 0; /* Начальная непрозрачность */
+    transition: opacity 0.5s ease; /* Плавный переход для непрозрачности */
+}
+
+.concert-card.active {
+    display: block; /* Показываем активную карточку */
+    opacity: 1; /* Полная непрозрачность для активной карточки */
+}
+
+.concert-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.arrow-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.prev-button,
+.next-button {
+    background-color: white; /* Серый фон */
+    color: #2f012d; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    width: 70px; /* Ширина кнопки */
+    height: 70px; /* Высота кнопки */
+    border-radius: 50%; /* Делает кнопку круглой */
+    cursor: pointer; /* Указатель при наведении */
+    margin: 0 20px; /* Отступы */
+    font-size: 2.5em; /* Размер шрифта */
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход при наведении */
+}
+
+/* Эффект при наведении на кнопку */
+.prev-button:hover,
+.next-button:hover {
+    background-color: #2f012d; /* Белый фон при наведении */
+    color: white; /* Изменение цвета текста на серый */
+}
+
+
+
+
+
+
+/* Общие стили для секции */
+#tickets {
+    padding: 50px;
+    text-align: center;
+}
+
+#tickets h2 {
+    color: #2f012d; /* Яркий цвет заголовка */
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+/* Стиль для контейнера формы */
+.form-container {
+    background-color: #2f012d; /* Темный фон */
+    padding: 30px;
+    border-radius: 15px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+    width: 100%;
+    max-width: 600px; /* Ограничиваем максимальную ширину контейнера */
+    margin: 0 auto; /* Центрируем контейнер на странице */
+}
+
+/* Стили для формы */
+#tickets form {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#tickets form div {
+    margin-bottom: 15px;
+}
+
+#tickets label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffcc00; /* Яркий цвет для текста меток */
+}
+
+#tickets input[type="text"],
+#tickets input[type="tel"],
+#tickets input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ffcc00; /* Яркий цвет для рамки */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#tickets button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ff5a5f; /* Яркий цвет кнопки */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    border-radius: 4px;
+}
+
+#tickets button[type="submit"]:hover {
+    background-color: #ff1a1f; /* Яркий цвет кнопки при наведении */
+}
+
+
+
+
+
+/* Общие стили для секции отзывов */
+#reviews {
+    padding: 50px;
+    text-align: center;
+    background-color: #2f012d; /* Цвет фона */
+    color: #ffcc00; /* Цвет текста */
+}
+
+#reviews h2 {
+    color: #ffcc00; /* Яркий цвет заголовка */
+}
+
+/* Стили для отзывов */
+#reviews blockquote {
+    font-style: italic;
+    color: #f0f0f0; /* Светлый цвет текста для контраста */
+    border-left: 4px solid #ffcc00; /* Яркая рамка */
+    padding-left: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    max-height: 80px; /* Ограничиваем высоту блока для скрытия текста */
+    position: relative;
+}
+
+#reviews .review {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#reviews .review-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+#reviews .review-text {
+    display: inline-block;
+    margin: 0;
+}
+
+#reviews .read-more {
+    color: #007BFF; /* Яркий цвет для ссылки "Читать полностью" */
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+}
+
+#reviews blockquote.expanded {
+    max-height: none; /* Убираем ограничение высоты */
+}
+
+
+/* Часто задаваемые вопросы */
+#faq {
+    text-align: left; /* Выравниваем текст по левому краю */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px; /* Добавляем отступы для секции */
+    color: #ffffff; /* Цвет текста */
+}
+
+.faq-item {
+    background-color: #3a0e3e; /* Темно-фиолетовый фон для вопросов */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: #ffffff; /* Цвет текста ответов */
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Разворачиваем блок ответа */
+}
+
+.faq-toggle {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff; /* Цвет текста для плюса */
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg); /* Поворачиваем плюс на 45 градусов, чтобы он стал крестиком */
+}
+
+#menu-list {
+    display: flex; /* Отображение меню для десктопа */
+}
+/* Планшетные стили */
+@media (max-width: 1024px) {
+    #navigation ul {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 15px; /* Отступы внутри */
+        flex-direction: column;
+    }
+
+    .concert-card {
+        width: 45%; /* Две карточки в ряд на планшетах */
+    }
+    
+    .review {
+        flex-direction: row; /* Горизонтальная ориентация для отзывов */
+    }
+    
+    .review-photo {
+        width: 40px; /* Немного меньшая фотография */
+        height: 40px;
+    }
+}
+
+/* Мобильные стили */
+@media (max-width: 640px) {
+    
+        
+        #navigation ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        
+        /* Скрываем меню на мобильных устройствах */
+        #navigation ul {
+            display: none; /* Скрываем меню по умолчанию */
+        }
+        
+        /* Кнопка для переключения меню */
+        #menu-toggle {
+            display: flex;
+            background-color: #6e0168; /* Цвет кнопки */
+            color: white; /* Цвет текста кнопки */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #navigation ul {
+            gap: 5px; /* Расстояние между пунктами меню */
+            list-style-type: none;
+            margin: 0px;
+            padding: 20px; /* Отступы внутри */
+            flex-direction: column;
+        }
+        
+        #navigation ul li a {
+            height: 50px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin:  50px 0;
+            padding: 5px 30px; /* Отступы вокруг текста */
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        /* Стили для отображения меню при активном состоянии */
+        #navigation.active ul {
+            display: block; /* Показываем меню при активном состоянии */
+        }
+    .form-container {
+        max-width: 500px;
+        padding: 20px;
+        margin: 0px;
+    }
+    .concert-card {
+        width: 100%; /* Полная ширина на мобильных устройствах */
+        margin: 5px 0;
+    }
+
+    .review {
+        flex-direction: column; /* Стековая ориентация фото и текста отзыва */
+        align-items: flex-start;
+    }
+
+    .review-photo {
+        margin-bottom: 5px; /* Пространство под фотографией */
+    }
+}
+
